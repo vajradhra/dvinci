@@ -32,7 +32,7 @@ int contains_all_letters_case_insensitive(const char *word, const char *substr) 
 
 int main(int argc, char *argv[]) {
     if (argc < 3) {
-        printf(PINK"usage: %s <letter> *.txt\n"RESET, argv[0]);
+        printf("usage: %s <letter> *.txt\n", argv[0]);
         return 1;
     }
     const char *substr = argv[1];
@@ -48,7 +48,7 @@ int main(int argc, char *argv[]) {
         char *token = strtok_r(line, " \t\r\n,.;:!?()[]{}<>\"'", &saveptr);
         while (token) {
             if (contains_all_letters_case_insensitive(token, substr)) {
-                printf(PINK "%s" RESET "\n", token);
+                printf("%s\n", token);
             }
             token = strtok_r(NULL, " \t\r\n,.;:!?()[]{}<>\"'", &saveptr);
         }
